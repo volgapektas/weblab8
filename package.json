@@ -1,0 +1,17 @@
+{
+  "name": "weblab8",
+  "version": "1.0.0",
+  "description": "Information server for Computer Engineering study programme",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "Volga Pektas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
