@@ -15,6 +15,22 @@ const COURSES = [
   { id: "CSE308", title: "Web Programming", credits: 5 },
 ];
 
+let requestsServed = 0;
+
+function requestLogger(req, res, next) {
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] ${req.method} ${req.url}`);
+  next();
+}
+
+function requestCounter(req, res, next) {
+  requestsServed += 1;
+  next();
+}
+
+app.use(requestLogger);
+app.use(requestCounter);
+
 app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(PORT, () => {
