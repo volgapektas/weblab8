@@ -64,6 +64,18 @@ app.get("/api/headers", (req, res) => {
   });
 });
 
+app.post("/api/subscribe", (req, res) => {
+  res.status(201).json({ subscribed: true });
+});
+
+app.get("/api/admin", (req, res) => {
+  res.status(403).json({ error: "Forbidden" });
+});
+
+app.get("/api/stats", (req, res) => {
+  res.json({ requestsServed });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
