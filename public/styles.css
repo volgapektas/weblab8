@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  background-color: #f4f6f9;
+  color: #2c3e50;
+  line-height: 1.6;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 1.75rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.5rem;
+  border-left: 5px solid #2563eb;
+}
+
+header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: #1e3a8a;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.5rem;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+}
+
+.card p {
+  margin-bottom: 1rem;
+  color: #475569;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+button {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-align: left;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+button[data-method="POST"] {
+  background-color: #059669;
+}
+
+button[data-method="POST"]:hover {
+  background-color: #047857;
+}
+
+.status-bar {
+  background-color: #f1f5f9;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+#response-body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.9rem;
+  min-height: 120px;
+  white-space: pre-wrap;
+}
+
+.route-links {
+  list-style: inside disc;
+}
+
+.route-links li {
+  margin-bottom: 0.5rem;
+}
+
+.route-links a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.route-links a:hover {
+  text-decoration: underline;
+}
