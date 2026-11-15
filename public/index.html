@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computer Engineering Programme - Info Server</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>B.Sc. in Computer Engineering</h1>
+        <p>
+          Welcome to the official information portal for our Computer
+          Engineering study programme. Our curriculum combines core computer
+          science theory with practical software engineering, operating systems,
+          database management, and modern web development. Use the interactive
+          panel below to explore our API routes and inspect live server
+          responses.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>API Route Explorer</h2>
+        <p>
+          Click any button below to send a request using
+          <code>fetch()</code> with relative URLs:
+        </p>
+
+        <div class="button-grid">
+          <button type="button" data-path="/api/courses" data-method="GET">
+            GET /api/courses
+          </button>
+          <button type="button" data-path="/api/status" data-method="GET">
+            GET /api/status
+          </button>
+          <button type="button" data-path="/api/headers" data-method="GET">
+            GET /api/headers
+          </button>
+          <button type="button" data-path="/api/subscribe" data-method="POST">
+            POST /api/subscribe
+          </button>
+          <button type="button" data-path="/api/admin" data-method="GET">
+            GET /api/admin
+          </button>
+          <button type="button" data-path="/api/stats" data-method="GET">
+            GET /api/stats
+          </button>
+          <button
+            type="button"
+            data-path="/api/does-not-exist"
+            data-method="GET"
+          >
+            GET /api/does-not-exist (404)
+          </button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Server Response</h2>
+        <div class="status-bar">
+          <span>HTTP Status Code: </span>
+          <strong id="status-code">Waiting for request...</strong>
+        </div>
+        <pre id="response-body">
+Click one of the API buttons above to see the response body here.</pre
+        >
+      </section>
+
+      <section class="card">
+        <h2>Other Server Routes</h2>
+        <p>Direct browser links for non-JSON routes:</p>
+        <ul class="route-links">
+          <li>
+            <a href="/hello" target="_blank">GET /hello</a> (Plain text
+            greeting)
+          </li>
+          <li>
+            <a href="/robots.txt" target="_blank">GET /robots.txt</a> (Plain
+            text robots file)
+          </li>
+          <li>
+            <a href="/old-page" target="_blank">GET /old-page</a> (Redirects to
+            /hello)
+          </li>
+          <li>
+            <a href="/missing-page" target="_blank">GET /missing-page</a>
+            (Non-API 404 page)
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
