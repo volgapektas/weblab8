@@ -1,0 +1,22 @@
+import express from "express";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const COURSES = [
+  { id: "CSE101", title: "Introduction to Computer Engineering", credits: 6 },
+  { id: "CSE204", title: "Database Management Systems", credits: 5 },
+  { id: "CSE301", title: "Operating Systems", credits: 6 },
+  { id: "CSE308", title: "Web Programming", credits: 5 },
+];
+
+app.use(express.static(path.join(__dirname, "public")));
+
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+});
