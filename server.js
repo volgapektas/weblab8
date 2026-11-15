@@ -45,6 +45,25 @@ app.get("/old-page", (req, res) => {
   res.redirect("/hello");
 });
 
+app.get("/api/courses", (req, res) => {
+  res.json(COURSES);
+});
+
+app.get("/api/status", (req, res) => {
+  res.json({
+    status: "ok",
+    nodeVersion: process.version,
+    uptimeSeconds: Math.floor(process.uptime()),
+  });
+});
+
+app.get("/api/headers", (req, res) => {
+  res.json({
+    "User-Agent": req.get("User-Agent") || "",
+    Accept: req.get("Accept") || "",
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
